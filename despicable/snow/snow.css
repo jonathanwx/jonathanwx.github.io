@@ -1,0 +1,32 @@
+.jonathanwx-snow-bg {
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    /* background-image: url(http://wx1.sinaimg.cn/large/6fb4c1bdly1flvwjjtb3pj20sg0iyaba.jpg); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -2;
+    filter: blur(7px);
+}
+
+.jonathanwx-snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.site-subtitle,
+.posts-expand .post-meta,
+.footer {
+    /* color: #4c4c4c; */
+}
+
+.post-body blockquote {
+    /* color: #2d2d2d; */
+}

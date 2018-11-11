@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="FpIfEhc-ePaRc9KBPk4S-7cPiYUTENkVrzPw1NsFNkc">
+<meta name="baidu-site-verification" content="mtRkb0R4v0">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jonathan,长江,同学,长江同学">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="最近在苦修前端，某天突发奇想，在github潜水多年，是时候将github page利用起来了，几番折腾，利用nodejs下的hexo将博客搭了起来，并配合上next主题，部署到了github上。附上教程：“使用Hexo + Next搭建静态博客”偶遇这两天万网活动，cn域名首年降价到13元出售，想到自己手中还有个闲置多年的VPS，果断出手注册了个域名。由于VPS是国外的，免去了备案的繁琐流程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo+next优化步骤">
+<meta property="og:url" content="https://jonathanwx.cn/2018/01/20/hexo-next优化步骤/index.html">
+<meta property="og:site_name" content="长江同学的小站">
+<meta property="og:description" content="最近在苦修前端，某天突发奇想，在github潜水多年，是时候将github page利用起来了，几番折腾，利用nodejs下的hexo将博客搭了起来，并配合上next主题，部署到了github上。附上教程：“使用Hexo + Next搭建静态博客”偶遇这两天万网活动，cn域名首年降价到13元出售，想到自己手中还有个闲置多年的VPS，果断出手注册了个域名。由于VPS是国外的，免去了备案的繁琐流程。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-10T14:18:01.325Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo+next优化步骤">
+<meta name="twitter:description" content="最近在苦修前端，某天突发奇想，在github潜水多年，是时候将github page利用起来了，几番折腾，利用nodejs下的hexo将博客搭了起来，并配合上next主题，部署到了github上。附上教程：“使用Hexo + Next搭建静态博客”偶遇这两天万网活动，cn域名首年降价到13元出售，想到自己手中还有个闲置多年的VPS，果断出手注册了个域名。由于VPS是国外的，免去了备案的繁琐流程。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://jonathanwx.cn/2018/01/20/hexo-next优化步骤/">
+
+
+
+
+
+  <title>hexo+next优化步骤 | 长江同学的小站</title>
+  
+
+
+
+
+
+
+
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.5.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.5.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js"></script>
+
+
+  
+  <link rel="stylesheet" href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css">
+  <script type="text/javascript" src="https://cdn.bootcss.com/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">长江同学的小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">路漫漫其修远兮</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jonathanwx.cn/2018/01/20/hexo-next优化步骤/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jonathan_l">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长江同学的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">hexo+next优化步骤</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T21:24:57+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+      
+
+      
+        <blockquote>
+<p>最近在苦修前端，某天突发奇想，在github潜水多年，是时候将github page利用起来了，几番折腾，利用nodejs下的hexo将博客搭了起来，并配合上next主题，部署到了github上。附上教程：<a href="https://www.jianshu.com/p/f66103553c45" target="_blank" rel="noopener">“使用Hexo + Next搭建静态博客”</a><br>偶遇这两天万网活动，cn域名首年降价到13元出售，想到自己手中还有个闲置多年的VPS，果断出手注册了个域名。由于VPS是国外的，免去了备案的繁琐流程。在部署好服务端环境之后，利用vscode以及sftp插件直接将源码下载到了本地，在vscode中编辑并与服务器同步(nodejs会监控文件变化，大部分情况下修改不需要重启服务器)。<br>没有VPS其实也可以将域名解析到github page上<a href="https://www.cnblogs.com/olddoublemoon/p/6629398.html" target="_blank" rel="noopener">“github pages+阿里云域名绑定搭建个人博客”</a>。<br>一切都就绪之后，发现差点什么。然后由于是国外的VPS，隔了个大西洋，延迟肯定是很高的。所以决定在hexo+next下边进行定制。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h1><p>这一部分很简单，其实就是修改站点以及主题的配置文件，直接贴链接<br><a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">“站点配置”</a><br><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">“主题配置”</a></p>
+<hr>
+<h1 id="静态文件加速"><a href="#静态文件加速" class="headerlink" title="静态文件加速"></a>静态文件加速</h1><p>next主题官方给出的<a href="http://theme-next.iissnan.com/advanced-settings.html" target="_blank" rel="noopener">“进阶设定”</a>中提供了主题中用到的第三方库的cdn地址，但实际上官方给出的地址访问速度并没有太理想。<br>这里提供另外一个选择，国内的cdn，比较全 <a href="http://www.bootcdn.cn/" target="_blank" rel="noopener">“稳定、快速、免费的前端开源项目 CDN 加速服务”</a> 主题中用到的第三方库在这儿都能找到。根据官方提供的配置方法即可(jQuery别用最新的，主题中用的啥就用啥，其他的可以用最新的)。<br>配置好之后访问速度提升很明显。</p>
+<hr>
+<h1 id="fancybox适配"><a href="#fancybox适配" class="headerlink" title="fancybox适配"></a>fancybox适配</h1><p>主题中用到了相册插件fancybox，但是版本比较老了。最新的版本都到了3.x.x，api发生了变化，但是更炫酷。打开theme/next/source/js/src/utils.js修改wrapImageWithFancyBox方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".content img"</span>)</span><br><span class="line">  .not(<span class="string">"[hidden]"</span>)</span><br><span class="line">  .not(<span class="string">".group-picture img,.swiper-container img,.post-gallery img"</span>)</span><br><span class="line">  .each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $image = $(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">var</span> imageTitle = $image.attr(<span class="string">"title"</span>);</span><br><span class="line">    <span class="keyword">var</span> $imageWrapLink = $image.parent(<span class="string">"a"</span>);</span><br><span class="line">    <span class="keyword">if</span> ($imageWrapLink.size() &lt; <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> imageLink = $image.attr(<span class="string">"data-original"</span>)</span><br><span class="line">        ? <span class="keyword">this</span>.getAttribute(<span class="string">"data-original"</span>)</span><br><span class="line">        : <span class="keyword">this</span>.getAttribute(<span class="string">"src"</span>);</span><br><span class="line">      $imageWrapLink = $image</span><br><span class="line">        .wrap(<span class="string">'&lt;a href="'</span> + imageLink + <span class="string">'" data-fancybox="content"&gt;&lt;/a&gt;'</span>)</span><br><span class="line">        .parent(<span class="string">"a"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    $imageWrapLink.addClass(<span class="string">"fancybox fancybox.image"</span>);</span><br><span class="line">    $imageWrapLink.attr(<span class="string">"rel"</span>, <span class="string">"group"</span>);</span><br><span class="line">    <span class="keyword">if</span> (imageTitle) &#123;</span><br><span class="line">      $imageWrapLink.append(</span><br><span class="line">        <span class="string">'&lt;p class="image-caption"&gt;'</span> + imageTitle + <span class="string">"&lt;/p&gt;"</span></span><br><span class="line">      );</span><br><span class="line">      $imageWrapLink.attr(<span class="string">"title"</span>, imageTitle);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">$(<span class="string">".fancybox"</span>).fancybox(&#123;</span><br><span class="line">  buttons: [<span class="string">"thumbs"</span>, <span class="string">"close"</span>]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="图片插件定制"><a href="#图片插件定制" class="headerlink" title="图片插件定制"></a>图片插件定制</h1><h2 id="首页图片展示"><a href="#首页图片展示" class="headerlink" title="首页图片展示"></a>首页图片展示</h2><p>利用hexo发表的文章，位于文章Front-matter区域中的photos所有的图片都会显示到首页中，无法利用主题提供的隔断标签。最好的情况下是Front-matter中的照片只显示第一章，作为封面。<br>步骤很简单，在theme/next/layout/_macro下新建post_index.swig文件,将同文件夹下的post.swig中的内容复制进去，然后就可以开始自定义文章在首页的显示样式。<br>最后将theme/next/layout/index.swig中的第二行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% import &apos;_macro/post.swig&apos; as post_template %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% import &apos;_macro/post_index.swig&apos; as post_template %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>即可，模板文件修改起来很容易，这里就不赘述了。</p>
+<h2 id="轮播插件"><a href="#轮播插件" class="headerlink" title="轮播插件"></a>轮播插件</h2><p>位于文章Front-matter区域中的photos在文章中会一个一个往下排，很不美观，要是放到轮播插件中岂不美哉。这里推荐一个轮播的插件<a href="http://idangero.us/swiper/" target="_blank" rel="noopener">Swiper</a>。<br>引入轮播插件，即可进行修改。具体修改位置在theme/next/layout/_macro/post.swig</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#123;# Gallery support #&#125;</span><br><span class="line">&#123;% if post.photos and post.photos.length %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"swiper-container"</span> <span class="attr">style</span>=<span class="string">"margin-bottom:45px;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"swiper-wrapper"</span>&gt;</span></span><br><span class="line">    &#123;% for photo in post.photos %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"swiper-slide"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; url_for(photo) &#125;&#125;"</span> <span class="attr">itemprop</span>=<span class="string">"contentUrl"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>        </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"swiper-pagination"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"swiper-button-prev"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"swiper-button-next"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">new</span> Swiper(<span class="string">'.swiper-container'</span>, &#123;</span></span><br><span class="line"><span class="javascript">        direction: <span class="string">'horizontal'</span>,</span></span><br><span class="line"><span class="javascript">        loop: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">        autoHeight: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">        autoPlay: <span class="literal">true</span>,</span></span><br><span class="line"><span class="undefined">        pagination: &#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">'.swiper-pagination'</span>,</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        navigation: &#123;</span></span><br><span class="line"><span class="javascript">        nextEl: <span class="string">'.swiper-button-next'</span>,</span></span><br><span class="line"><span class="javascript">        prevEl: <span class="string">'.swiper-button-prev'</span>,</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        scrollbar: &#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">'.swiper-scrollbar'</span>,</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>这里顺便提一下自定义js以及css如何引入，新建一个swig文件，就以Swiper插件为例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"//cdn.bootcss.com/Swiper/4.1.0/js/swiper.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//cdn.bootcss.com/Swiper/4.1.0/css/swiper.css"</span>&gt;</span><span class="tag">&lt;/<span class="name">link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>保存，然后打开theme/next/layout/post.swig，拉倒最下边</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block script_extra %&#125;</span><br><span class="line">  &#123;% include <span class="string">'_scripts/pages/post-details.swig'</span> %&#125;</span><br><span class="line">  &#123;% include <span class="string">'刚刚新建的swig文件的路径，相对路径即可'</span> %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<p>保存之后打开页面可能提示找不到jQuery，这是由于主题将第三方库的引入放到了html的body中，这里可以修改theme/next/layout/_layout.swig文件，将文件最后的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include <span class="string">'_scripts/vendors.swig'</span> %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这一行移到head中,如下所示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  &#123;% include '_partials/head.swig' %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;% block title %&#125;&#123;% endblock %&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  &#123;% include '_third-party/analytics/index.swig' %&#125;</span><br><span class="line">  &#123;% include '_scripts/vendors.swig' %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="主页定制"><a href="#主页定制" class="headerlink" title="主页定制"></a>主页定制</h1><p>next提供了炫酷的canvas<a href="http://theme-next.iissnan.com/theme-settings.html#use-motion" target="_blank" rel="noopener">背景特效</a>，这里没有用它提供的，而是自定义了一个呼吸气泡的动画特效。<br>在上一节中提到了自定义js以及css的引入方法这里又不用赘述了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div class="social-share" data-initialized="false">
+        <a href="#" class="social-share-icon icon-weibo"></a>
+        <a href="#" class="social-share-icon icon-qq"></a>
+        <a href="#" class="social-share-icon icon-qzone"></a>
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>弄个博客不容易~~~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://wx2.sinaimg.cn/large/6fb4c1bdgy1fnni1urmzcj20m80m8n39.jpg" alt="Jonathan_l 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://wx4.sinaimg.cn/large/6fb4c1bdgy1fnni1u96m2j20m80m80xp.jpg" alt="Jonathan_l 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/20/gallery-test/" rel="next" title="图片插件测试">
+                <i class="fa fa-chevron-left"></i> 图片插件测试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/head.jpg" alt="Jonathan_l">
+            
+              <p class="site-author-name" itemprop="name">Jonathan_l</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jonathanwx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/susansaid" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础配置"><span class="nav-number">1.</span> <span class="nav-text">基础配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#静态文件加速"><span class="nav-number">2.</span> <span class="nav-text">静态文件加速</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fancybox适配"><span class="nav-number">3.</span> <span class="nav-text">fancybox适配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片插件定制"><span class="nav-number">4.</span> <span class="nav-text">图片插件定制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#首页图片展示"><span class="nav-number">4.1.</span> <span class="nav-text">首页图片展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轮播插件"><span class="nav-number">4.2.</span> <span class="nav-text">轮播插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主页定制"><span class="nav-number">5.</span> <span class="nav-text">主页定制</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jonathan_l</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/Swiper/4.1.0/js/swiper.js"></script>
+  <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/4.1.0/css/swiper.css">
+
+
+
+  
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+</body>
+</html>

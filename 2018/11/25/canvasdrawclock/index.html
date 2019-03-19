@@ -85,19 +85,19 @@
 
 
 
-<meta name="description" content="这次分享下老早之前在慕课网上看到的用canvas绘制动画时钟的教程炫丽的倒计时效果Canvas绘图与动画基础，顺便也总结下自己的心得。说实话canvas我用的不熟，但是自己还是一边看着教程一遍把它琢磨了出来,教程里边教的是倒计时，我这边做了下改编弄成数字时钟了，浏览器打开，F11全屏直接就是屏保了。虽然不熟，先分享心得再说。细节后面在整理。 先上图  动画核心组成1.动画元素上图中的一个个圆形，">
+<meta name="description" content="这次分享下老早之前在慕课网上看到的用canvas绘制动画时钟的教程炫丽的倒计时效果Canvas绘图与动画基础，顺便也总结下自己的心得。说实话canvas我用的不熟，但是自己还是一边看着教程一遍把它琢磨了出来,教程里边教的是倒计时，我这边做了下改编弄成数字时钟了，浏览器打开，F11全屏直接就是屏保了。虽然不熟，先分享心得再说。细节后面在整理。  先上图">
 <meta name="keywords" content="javascript,cavans,canvas绘图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用canvas绘制炫酷数字时钟">
 <meta property="og:url" content="https://jonathanwx.cn/2018/11/25/canvasdrawclock/index.html">
 <meta property="og:site_name" content="长江同学的小站">
-<meta property="og:description" content="这次分享下老早之前在慕课网上看到的用canvas绘制动画时钟的教程炫丽的倒计时效果Canvas绘图与动画基础，顺便也总结下自己的心得。说实话canvas我用的不熟，但是自己还是一边看着教程一遍把它琢磨了出来,教程里边教的是倒计时，我这边做了下改编弄成数字时钟了，浏览器打开，F11全屏直接就是屏保了。虽然不熟，先分享心得再说。细节后面在整理。 先上图  动画核心组成1.动画元素上图中的一个个圆形，">
+<meta property="og:description" content="这次分享下老早之前在慕课网上看到的用canvas绘制动画时钟的教程炫丽的倒计时效果Canvas绘图与动画基础，顺便也总结下自己的心得。说实话canvas我用的不熟，但是自己还是一边看着教程一遍把它琢磨了出来,教程里边教的是倒计时，我这边做了下改编弄成数字时钟了，浏览器打开，F11全屏直接就是屏保了。虽然不熟，先分享心得再说。细节后面在整理。  先上图">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/6fb4c1bdgy1fy0a4zbij1g21170m6nk4.gif">
-<meta property="og:updated_time" content="2018-12-09T02:51:20.000Z">
+<meta property="og:updated_time" content="2019-03-19T12:00:05.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用canvas绘制炫酷数字时钟">
-<meta name="twitter:description" content="这次分享下老早之前在慕课网上看到的用canvas绘制动画时钟的教程炫丽的倒计时效果Canvas绘图与动画基础，顺便也总结下自己的心得。说实话canvas我用的不熟，但是自己还是一边看着教程一遍把它琢磨了出来,教程里边教的是倒计时，我这边做了下改编弄成数字时钟了，浏览器打开，F11全屏直接就是屏保了。虽然不熟，先分享心得再说。细节后面在整理。 先上图  动画核心组成1.动画元素上图中的一个个圆形，">
+<meta name="twitter:description" content="这次分享下老早之前在慕课网上看到的用canvas绘制动画时钟的教程炫丽的倒计时效果Canvas绘图与动画基础，顺便也总结下自己的心得。说实话canvas我用的不熟，但是自己还是一边看着教程一遍把它琢磨了出来,教程里边教的是倒计时，我这边做了下改编弄成数字时钟了，浏览器打开，F11全屏直接就是屏保了。虽然不熟，先分享心得再说。细节后面在整理。  先上图">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/6fb4c1bdgy1fy0a4zbij1g21170m6nk4.gif">
 
 
@@ -433,8 +433,9 @@
       
         <blockquote>
 <p>这次分享下老早之前在慕课网上看到的用canvas绘制动画时钟的教程<a href="https://www.imooc.com/learn/133" target="_blank" rel="noopener">炫丽的倒计时效果Canvas绘图与动画基础</a>，顺便也总结下自己的心得。说实话canvas我用的不熟，但是自己还是一边看着教程一遍把它琢磨了出来,教程里边教的是倒计时，我这边做了下改编弄成数字时钟了，浏览器打开，F11全屏直接就是屏保了。虽然不熟，先分享心得再说。细节后面在整理。</p>
-<p>先上图<br><img src="http://wx3.sinaimg.cn/large/6fb4c1bdgy1fy0a4zbij1g21170m6nk4.gif" alt="" title="炫酷的时钟"></p>
 </blockquote>
+<p>先上图<br><img src="http://wx3.sinaimg.cn/large/6fb4c1bdgy1fy0a4zbij1g21170m6nk4.gif" alt="" title="炫酷的时钟"></p>
+<a id="more"></a>
 <h1 id="动画核心组成"><a href="#动画核心组成" class="headerlink" title="动画核心组成"></a>动画核心组成</h1><p>1.动画元素<br>上图中的一个个圆形，每个元素都有位置，颜色，大小等属性，本文中动画元素的结构如下<br>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    x: <span class="number">100</span>,</span><br><span class="line">    y: <span class="number">200</span>,</span><br><span class="line">    r: <span class="number">4</span>,</span><br><span class="line">    g: <span class="number">1</span>,</span><br><span class="line">    vx: <span class="number">2</span>,</span><br><span class="line">    vy: <span class="number">-5</span>,</span><br><span class="line">    color: colors[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * colors.length)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>x,y为该元素的位置；r为半径，g重力加速度；vx，vy为该元素在x，y方向上的速度，color就是颜色</p>
 <p>2.更新函数<br>更新动画元素的属性，包括位置速度等<br>3.绘制函数<br>将动画元素绘制在canvas中<br>基本上就是上边三个组成了，有了动画元素，然后就是无限调用更新绘制来实现动画了，原理就是这么简单。</p>
@@ -604,7 +605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -626,7 +627,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

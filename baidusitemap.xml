@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://jonathanwx.cn/2018/11/25/canvasdrawclock/</loc>
+    <lastmod>2019-03-19</lastmod>
+  </url>  <url>
+    <loc>https://jonathanwx.cn/2019/03/19/2019-03-19-a-new-target/</loc>
+    <lastmod>2019-03-19</lastmod>
+  </url>  <url>
     <loc>https://jonathanwx.cn/2019/03/07/20190307-spring-boot-database-design/</loc>
     <lastmod>2019-03-07</lastmod>
   </url>  <url>
@@ -9,9 +15,6 @@
   </url>  <url>
     <loc>https://jonathanwx.cn/2019/02/19/20190220-spring-boot-data-integration/</loc>
     <lastmod>2019-02-20</lastmod>
-  </url>  <url>
-    <loc>https://jonathanwx.cn/2018/11/25/canvasdrawclock/</loc>
-    <lastmod>2018-12-09</lastmod>
   </url>  <url>
     <loc>https://jonathanwx.cn/2018/11/20/comments-20181120/</loc>
     <lastmod>2018-11-22</lastmod>

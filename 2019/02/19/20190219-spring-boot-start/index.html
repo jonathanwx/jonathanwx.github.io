@@ -6,7 +6,7 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -22,8 +22,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -44,7 +44,7 @@
   
     
   
-  <link href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -54,9 +54,9 @@
 
   
 
-<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="spring,spring boot," />
+  <meta name="keywords" content="spring,spring boot,">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="https://jonathanwx.cn/2019/02/19/20190219-spring-boot-start/"/>
+  <link rel="canonical" href="https://jonathanwx.cn/2019/02/19/20190219-spring-boot-start/">
 
 
 
@@ -220,7 +220,7 @@
 
 
   
-  <link rel="stylesheet" href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css"></link>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css">
   <script type="text/javascript" src="https://cdn.bootcss.com/social-share.js/1.0.16/js/social-share.min.js"></script>
 
 </head>
@@ -241,7 +241,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">长江同学的小站</span>
         <span class="logo-line-after"><i></i></span>
@@ -271,7 +271,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -281,7 +281,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -291,7 +291,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -333,7 +333,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jonathan_l">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/uploads/head.jpg">
     </span>
 
@@ -369,7 +369,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -445,13 +445,13 @@
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近项目组要对已有产品进行调整，计划将以前的框架抛弃采用新的架构，Spring Boot就是要采用的框架之一，正好之前学过，但学的不精，借此机会可以好好研究下。将步骤分享出来。<br>首先定个小目标吧，后端采用spring boot，mysql，前端使用Vue，iView，采用前后端分离的方式，实现一个简单的个人博客。<br>本文先把后端架子搭起来。</p>
 <a id="more"></a>
-<h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><p><img src="https://wx1.sinaimg.cn/mw690/6fb4c1bdgy1g0cxvck2mbj20dd0d4weq.jpg" alt="" title="项目结构"></p>
+<h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><p><img src="https://wx1.sinaimg.cn/mw690/6fb4c1bdgy1g0cxvck2mbj20dd0d4weq.jpg" alt title="项目结构"></p>
 <p>主要一共就三个文件<br><code>pom.xml</code> maven依赖管理文件<br><code>App.java</code> 项目主文件<br><code>TestController.java</code> controller测试样例<br>其它的文件可以忽略。<code>application.properties</code>该阶段没内容，可以不需要</p>
 <h1 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.3.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="App-java"><a href="#App-java" class="headerlink" title="App.java"></a>App.java</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(App.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="TestController-java"><a href="#TestController-java" class="headerlink" title="TestController.java"></a>TestController.java</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/hello"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>直接运行App.java即可启动<br>浏览器中输入localhost:8080/test/hello</p>
-<p><img src="https://wx4.sinaimg.cn/mw690/6fb4c1bdgy1g0cykzrozlj20bn04ajr8.jpg" alt=""></p>
+<p><img src="https://wx4.sinaimg.cn/mw690/6fb4c1bdgy1g0cykzrozlj20bn04ajr8.jpg" alt></p>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>启动后就相当于框架已经搭起来了，后续会持续集成数据库相关内容，以及前端内容。</p>
 
       
@@ -481,14 +481,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="https://wx2.sinaimg.cn/large/6fb4c1bdgy1fnni1urmzcj20m80m8n39.jpg" alt="Jonathan_l 微信支付"/>
+        <img id="wechat_qr" src="https://wx2.sinaimg.cn/large/6fb4c1bdgy1fnni1urmzcj20m80m8n39.jpg" alt="Jonathan_l 微信支付">
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="https://wx4.sinaimg.cn/large/6fb4c1bdgy1fnni1u96m2j20m80m80xp.jpg" alt="Jonathan_l 支付宝"/>
+        <img id="alipay_qr" src="https://wx4.sinaimg.cn/large/6fb4c1bdgy1fnni1u96m2j20m80m80xp.jpg" alt="Jonathan_l 支付宝">
         <p>支付宝</p>
       </div>
     
@@ -599,9 +599,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/uploads/head.jpg"
-                alt="Jonathan_l" />
+              <img class="site-author-image" itemprop="image" src="/uploads/head.jpg" alt="Jonathan_l">
             
               <p class="site-author-name" itemprop="name">Jonathan_l</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -755,7 +753,7 @@
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
   
   <script type="text/javascript" src="//cdn.bootcss.com/Swiper/4.1.0/js/swiper.js"></script>
-  <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/4.1.0/css/swiper.css"></link>
+  <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/4.1.0/css/swiper.css">
 
   
     <script type="text/javascript" src="/despicable/ribbon/ribbon.js"></script>
